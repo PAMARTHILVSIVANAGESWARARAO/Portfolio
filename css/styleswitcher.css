@@ -1,0 +1,143 @@
+/* ===================== Style Switcher Panel ====================== */
+.style-switcher {
+    position: fixed;
+    top: 50%;
+    right: -200px;
+    transform: translateY(-50%);
+    width: 200px;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+    border-radius: 8px 0 0 8px;
+  }
+  
+  /* Show when open */
+  .style-switcher.open {
+    right: 0;
+  }
+  
+  /* ===================== Toggler Button ====================== */
+  .style-switcher-toggler {
+    position: absolute;
+    top: 0;
+    left: -40px;
+    background-color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px 0 0 8px;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, border-radius 0.3s;
+  }
+  
+  .style-switcher-toggler:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+  }
+  
+  .style-switcher-toggler i {
+    font-size: 18px;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  /* Make gear circular when palette is open */
+  .style-switcher.open .style-switcher-toggler {
+    border-radius: 50%;
+  }
+  
+  /* ===================== Day/Night Toggle ====================== */
+  .day-night {
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #f7f7f7;
+    border-radius: 50%;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .day-night i {
+    font-size: 16px;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  /* ===================== Theme Colors ====================== */
+  .style-switcher h4 {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+  }
+  
+  .colors {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .colors span {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    border: 2px solid #eee;
+  }
+  
+  /* ===================== Color Palette ====================== */
+  .color-1 { background-color: #ec1839; } /* red */
+  .color-2 { background-color: #fa5b0f; } /* orange */
+  .color-3 { background-color: #37b182; } /* green */
+  .color-4 { background-color: #1854b4; } /* blue */
+  .color-5 { background-color: #f021b2; } /* purple */
+  
+  /* ===================== Dark Mode ====================== */
+  body.dark {
+    background-color: #121212;
+    color: #f0f0f0;
+  }
+  
+  body.dark .style-switcher {
+    background-color: #1f1f1f;
+  }
+  
+  body.dark .style-switcher-toggler {
+    background-color: #333;
+    border: 1px solid white;
+  }
+  
+  body.dark .style-switcher-toggler i {
+    color: #fff;
+  }
+  
+  body.dark .day-night {
+    background-color: #222;
+    border: 1px solid white;
+  }
+  
+  body.dark .day-night i {
+    color: #fff;
+  }
+  .style-switcher.open .style-switcher-toggler i {
+    animation: rotate 1s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

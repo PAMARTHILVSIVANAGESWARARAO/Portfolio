@@ -461,7 +461,7 @@ h3.my-profession {
     position: absolute;
     height: 80px;
     width: 80px;
-    right: 20px;
+    right: 10px;
     bottom: -40px;
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);

@@ -45,14 +45,14 @@ body {
     cursor: url('cursor.png'), pointer;
   }*/
 
-body.dark{
-    
+body.dark {
+
     --bg-black-900: #151515;
     --bg-black-100: #222222;
     --bg-black-50: #393939;
     --text-black-900: #ffffff;
     --text-black-700: #e9e9e9;
-    
+
 }
 
 .hidden {
@@ -67,42 +67,44 @@ body.dark{
     opacity: 1;
     position: fixed;
     left: 270px;
-    top:0;
+    top: 0;
     right: 0;
     bottom: 0;
-    z-index:0;
+    z-index: 0;
     overflow-y: auto;
     overflow-x: hidden;
     transition: all 0.3s ease;
-    
+
 
 
 }
-.section.back-section{
+
+.section.back-section {
     z-index: 1;
-    
+
 }
-.section.active{
+
+.section.active {
     z-index: 2;
     opacity: 1;
     animation: slideSection 1s ease;
 }
 
 @keyframes slideSection {
-    0%{
+    0% {
         transform: translateX(100%);
     }
-    100%
-    {
+
+    100% {
         transform: translateX(0%);
     }
-    
+
 }
 
 html {
     scroll-behavior: smooth;
-  }
-  
+}
+
 /*
 .main-content {
     padding-left: 270px;
@@ -111,7 +113,7 @@ html {
 */
 
 
-  
+
 .padd-15 {
     padding-left: 15px;
     padding-right: 15px;
@@ -153,6 +155,7 @@ html {
     position: absolute;
     top: 100%;
     left: 0;
+    box-shadow: 0 0 10px var(--skin-color);
 }
 
 .section-title h2::after {
@@ -164,7 +167,7 @@ html {
     top: 100%;
     left: 0;
     margin-top: 8px;
-
+    box-shadow: 0 0 10px var(--skin-color);
 }
 
 .row {
@@ -190,11 +193,12 @@ html {
 }
 
 .btn:hover {
-
-    box-shadow: 3px 3px 20px rgb(0, 0, 0);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--skin-color);
 }
-.shadow-dark{
-    box-shadow: 0 0 20px rgba(48,46,77,0.15);
+
+.shadow-dark {
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
 .aside {
@@ -360,7 +364,8 @@ html {
 .aside .nav-toggler.open span::after {
     transform: rotate(-45deg);
     top: 0;
-    bottom: auto; /* override bottom */
+    bottom: auto;
+    /* override bottom */
 }
 
 .aside .nav {
@@ -518,15 +523,11 @@ h3.my-profession {
 }
 
 .about .about-content .personal-info {
-    flex: 0 0 60%;
-    max-width: 60%;
+    flex: 0 0 100%;
+    max-width: 100%;
     padding-left: 15px;
     padding-right: 15px;
     margin-top: 40px;
-
-
-
-
 }
 
 .about .about-content .personal-info .info-item {
@@ -563,105 +564,92 @@ h3.my-profession {
 }
 
 .about .about-content .personal-info .buttons .btn {
-    
+
     margin-top: 10px;
 }
 
 .about .about-content .skills {
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 100%;
+    max-width: 100%;
     padding-left: 15px;
     padding-right: 15px;
     margin-top: 40px;
-
 }
 
-.about .about-content .skills .skill-item {
-    flex: 0 0 100%;
-    max-width: 100%;
-
-
-}
-
-.about .about-content .skills .skill-item h5 {
-    line-height: 40px;
-    font-weight: 600;
-    font-size: 16px;
-    color: var(--text-black-900);
-    text-transform: capitalize;
-
-}
-
-.about .about-content .skills .skill-item .progress {
-    background-color: var(--bg-black-50);
-    height: 7px;
-    border-radius: 4px;
-    width: 100%;
-    position: relative;
-}
-
-.about .about-content .skills .skill-item {
+.about .about-content .skills .skills-heading {
+    font-size: 22px;
+    font-weight: 700;
     margin-bottom: 25px;
-}
-
-.about .about-content .skills .skill-item .progress .progress-in {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    border-radius: 4px;
-    background-color: var(--skin-color);
-    animation: fillProgressBar 2s ease-out forwards;
-    
-
-}
-/* Animation for progress bar filling */
-@keyframes fillProgressBar {
-    0% {
-        width: 0%;
-    }
-    100% {
-        width: var(--progress-width); /* We'll dynamically apply the width of each skill */
-    }
-}
-
-.about .about-content .skills .skill-item:nth-child(1) .progress .progress-in {
-    width: 96%; /* HTML */
-    --progress-width: 96%;
-}
-.about .about-content .skills .skill-item:nth-child(2) .progress .progress-in {
-    width: 76%; /* JavaScript */
-    --progress-width: 76%;
-}
-.about .about-content .skills .skill-item:nth-child(3) .progress .progress-in {
-    width: 86%; /* CSS */
-    --progress-width: 86%;
-}
-.about .about-content .skills .skill-item:nth-child(4) .progress .progress-in {
-    width: 86%; /* PHP */
-    --progress-width: 86%;
-}
-.about .about-content .skills .skill-item:nth-child(5) .progress .progress-in {
-    width: 76%; /* Java */
-    --progress-width: 76%;
-}
-.about .about-content .skills .skill-item:nth-child(6) .progress .progress-in {
-    width: 96%; /* Python */
-    --progress-width: 96%;
-}
-.about .about-content .skills .skill-item:nth-child(7) .progress .progress-in {
-    width: 96%; /* Bootstrap */
-    --progress-width: 96%;
-}
-
-.about .about-content .skills .skill-item .skill-percent {
-    position: absolute;
-    right: 0;
     color: var(--text-black-900);
-    top: -40px;
-    font-weight: 400;
-    line-height: 40px;
+}
 
+.about .about-content .skills .skills-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.about .about-content .skills .skill-category-card {
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 14px;
+    padding: 22px 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.about .about-content .skills .skill-category-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--skin-color);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.about .about-content .skills .skill-category-card .category-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-black-900);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about .about-content .skills .skill-category-card .category-title i {
+    color: var(--skin-color);
+    font-size: 18px;
+}
+
+.about .about-content .skills .skill-category-card .category-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.about .about-content .skills .skill-badge {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background-color: var(--bg-black-50);
+    color: var(--text-black-700);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.about .about-content .skills .skill-badge i {
+    font-size: 15px;
+}
+
+.about .about-content .skills .skill-badge:hover {
+    border-color: var(--skin-color);
+    color: var(--skin-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .about .about-content .education,
@@ -688,187 +676,260 @@ h3.my-profession {
 }
 
 .about .about-content .timeline {
-    background-color: var(--bg-black-100);
-    padding: 30px 15px;
-    border: 1px solid var(--bg-black-50);
-    border-radius: 10px;
     width: 100%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .about .about-content .timeline .timeline-item {
     position: relative;
-    padding-left: 37px;
-    margin-bottom: 50px;
-    
+    padding: 22px 22px 22px 35px;
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 12px;
+    transition: all 0.3s ease;
 }
 
-.about .about-content .timeline .timeline-item:last-child{
-    padding-bottom:0 ;
-
+.about .about-content .timeline .timeline-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--skin-color);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
-.about .about-content .timeline .timeline-item::before{
+
+.about .about-content .timeline .timeline-item::before {
     content: '';
-    width: 2px ;
+    width: 3px;
     position: absolute;
     height: 100%;
-    left:7px;
-    top:0;
+    left: 14px;
+    top: 0;
     background-color: var(--skin-color);
+    border-radius: 3px;
 }
 
-.about .about-content .timeline .timeline-item span{
-    margin-left: 5px;
-    font-size: 16px;
-    font-weight: 400;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    color: var(--text-black-700);
-}
-
-.about .about-content .timeline .circle-dot{
+.about .about-content .timeline .circle-dot {
     position: absolute;
-    left:0;
-    top:0;
+    left: 8px;
+    top: 25px;
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background-color: var(--skin-color)
+    background-color: var(--skin-color);
+    box-shadow: 0 0 8px var(--skin-color);
+    z-index: 1;
 }
 
-.about .about-content .timeline .timeline-date{
-    color: var(--text-black-700);
-}
-.about .about-content .timeline .timeline-date .fa{
-    margin-right: 5px;
+.about .about-content .timeline .timeline-date {
+    color: var(--skin-color);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-.about .about-content .timeline .timeline-title{
+.about .about-content .timeline .timeline-date .fa {
+    font-size: 14px;
+    color: var(--skin-color);
+}
+
+.about .about-content .timeline .timeline-title {
     font-weight: 700;
     font-size: 18px;
-    margin-bottom: 15px;
-    margin-top: 2px;
+    margin-bottom: 10px;
     text-transform: capitalize;
     color: var(--text-black-900);
-    
 }
 
-.about .about-content .timeline .timeline-text{
+.about .about-content .timeline .timeline-subtitle {
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+
+.about .about-content .timeline .timeline-text {
     line-height: 25px;
-    font-size: 16px;
+    font-size: 15px;
     text-align: justify;
-    color: var(--text-black-700);
-}
-
-
-/*service*/
-
-.service .container{
-    padding: 40px;
-    
-}
-
-.service .service-item {
-    margin-bottom: 30px;
-    flex: 0 0 33.3333%;
-    animation: growServiceItem 1s ease-out forwards;
-    
-
-}
-
-
-.service .service-item .service-item-inner{
-    background-color: var(--bg-black-100);
-    border: 1px solid var(--bg-black-50);
-    padding: 30px 15px;
-    border-radius: 10px;
-    text-align: left;
-    cursor: pointer;
-}
-
-.service .service-item .service-item-inner:hover{
-    box-shadow: 0 0 20px rgba(48,46,77,0.15);
-    transition: all 0.3s ease;
-    transform: scale(1.05);
-}
-.service .service-item .service-item-inner .icon{
-    height: 30px;
-    width: 30px;
-    display: block;
-    cursor: pointer;
-    
-
-
-}
-.service .service-item .service-item-inner .icon .fa{
-    font-size: 20px;
-    line-height: 30px;
-    color: var(--skin-color);
-    
-}
-.service .service-item .service-item-inner h4{
-    font-size: 18px;
-    margin-bottom: 15px;
-    margin-top: 5px;
-    color: var(--text-black-900);
-    text-transform: capitalize;
-
-
-}
-
-.service .service-item .service-item-inner p{
-    font-size: 16px;
-    line-height: 25px;
     color: var(--text-black-700);
     margin-bottom: 0;
 }
 
 
+/*service*/
+
+.service .container {
+    padding: 40px 15px;
+}
+
+.service .service-item {
+    margin-bottom: 30px;
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+    display: flex;
+}
+
+.service .service-item .service-item-inner {
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    padding: 30px 22px;
+    border-radius: 16px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.service .service-item .service-item-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--skin-color);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.service .service-item .service-item-inner:hover {
+    transform: translateY(-8px);
+    border-color: var(--skin-color);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18), 0 0 15px rgba(236, 92, 42, 0.15);
+}
+
+.service .service-item .service-item-inner:hover::before {
+    opacity: 1;
+}
+
+.service .service-item .service-item-inner .icon {
+    height: 52px;
+    width: 52px;
+    border-radius: 50%;
+    background-color: var(--bg-black-50);
+    border: 1.5px solid var(--skin-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.35s ease;
+}
+
+.service .service-item .service-item-inner .icon i {
+    font-size: 22px;
+    color: var(--skin-color);
+    transition: all 0.35s ease;
+}
+
+.service .service-item .service-item-inner:hover .icon {
+    background-color: var(--skin-color);
+    box-shadow: 0 0 15px var(--skin-color);
+    transform: scale(1.08);
+}
+
+.service .service-item .service-item-inner:hover .icon i {
+    color: #ffffff;
+}
+
+.service .service-item .service-item-inner h4 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-black-900);
+}
+
+.service .service-item .service-item-inner p {
+    font-size: 14.5px;
+    line-height: 24px;
+    color: var(--text-black-700);
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.service .service-item .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: auto;
+}
+
+.service .service-item .service-tags span {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 15px;
+    background-color: var(--bg-black-50);
+    color: var(--text-black-700);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.service .service-item .service-item-inner:hover .service-tags span {
+    border-color: var(--skin-color);
+    color: var(--skin-color);
+    background-color: transparent;
+}
+
+
 /*===================portfolio=================*/
-.portfolio .container{
+.portfolio .container {
     padding-bottom: 40px;
 
 }
+
 .portfolio .portfolio-heading {
-    
+
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 40px;
 
 }
+
 .portfolio .portfolio-heading h2 {
-    
+
     color: var(--text-black-900);
     font-weight: 500;
 
-    
+
 }
+
 .portfolio .portfolio-item {
     flex: 0 0 33.3333%;
     max-width: 33.3333%;
     margin-bottom: 30px;
     cursor: pointer;
 }
-.portfolio .portfolio-item-inner{
+
+.portfolio .portfolio-item-inner {
     border: 6px solid var(--bg-black-100);
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
 
 }
+
 .portfolio .portfolio-item-inner .portfolio-img img {
-   
+
     display: block;
 
 }
+
 /* contact */
-.contact-title{
+.contact-title {
     color: var(--skin-color);
     text-align: center;
     font-size: 25px;
     margin-bottom: 20px;
 
 }
-.contact-sub-title{
+
+.contact-sub-title {
     color: var(--text-black-900);
     text-align: center;
     font-size: 15px;
@@ -876,28 +937,32 @@ h3.my-profession {
 
 
 }
-.contact .contact-info-item{
-    flex:0 0 25%;
+
+.contact .contact-info-item {
+    flex: 0 0 25%;
     max-width: 25%;
     text-align: center;
     margin-bottom: 60px;
 
 }
 
-.contact .contact-info-item .icon{
+.contact .contact-info-item .icon {
     display: inline-block;
 }
-.contact .contact-info-item .icon .fa{
+
+.contact .contact-info-item .icon .fa {
     font-size: 25px;
     color: var(--skin-color);
 
 }
-.contact .contact-info-item h4{
+
+.contact .contact-info-item h4 {
     font-size: 18px;
-   font-weight: 800;
-   color: var(--text-black-900);
-   text-transform: capitalize;
-   margin: 15px 0 5px;;
+    font-weight: 800;
+    color: var(--text-black-900);
+    text-transform: capitalize;
+    margin: 15px 0 5px;
+    ;
 }
 
 .contact .row .contact-info-item {
@@ -905,36 +970,40 @@ h3.my-profession {
     /*after modify if not apply for anything */
 
 }
-.contact .contact-info-item p{
+
+.contact .contact-info-item p {
     font-size: 16px;
     color: var(--text-black-700);
     line-height: 25px;
     font-weight: 400;
 }
 
-.contact .contact-form{
-    
+.contact .contact-form {
+
     flex: 0 0 100%;
     max-width: 100%;
 
 }
 
-.contact .contact-form .col-6{
-    flex:0 0 50%;
+.contact .contact-form .col-6 {
+    flex: 0 0 50%;
     max-width: 50%;
-    
+
 }
-.contact .contact-form .col-12{
-    flex:0 0 100%;
+
+.contact .contact-form .col-12 {
+    flex: 0 0 100%;
     max-width: 100%;
-    
-    
+
+
 }
-.contact .contact-form .form-item{
+
+.contact .contact-form .form-item {
     margin-bottom: 30px;
 
 }
-.contact .contact-form .form-item .form-control{
+
+.contact .contact-form .form-item .form-control {
     width: 100%;
     height: 50px;
     border-radius: 25px;
@@ -945,15 +1014,18 @@ h3.my-profession {
     color: var(--text-black-700);
     transition: all 0.3s ease;
 }
-.contact .contact-form .form-item .form-control:focus{
-    box-shadow: 0 0 20px rgba(48,46,77,0.15);
+
+.contact .contact-form .form-item .form-control:focus {
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
-.contact .contact-form .form-item textarea.form-control{
+
+.contact .contact-form .form-item textarea.form-control {
     height: 140px;
     text-transform: capitalize;
 
 }
-.contact .contact-form .btn{
+
+.contact .contact-form .btn {
     height: 50px;
     padding: 0 50px;
 
@@ -969,106 +1041,128 @@ h3.my-profession {
     padding: 15px;
     border-radius: 5px;
     font-weight: bold;
-  }
+}
 
-  
+
 
 
 
 /*==============Responsive  media Querying ================*/
 @media(max-width: 1199px) {
 
-    .section .container{
+    .section .container {
         padding-top: 70px;
     }
+
     .aside {
-        left:-270px;
+        left: -270px;
 
     }
-    .aside.open{
-        left:0;
+
+    .aside.open {
+        left: 0;
     }
-    .aside .nav-toggler{
+
+    .aside .nav-toggler {
         display: flex;
         left: 30px;
     }
-    .aside .nav-toggler.open{
-        left:300px
+
+    .aside .nav-toggler.open {
+        left: 300px
     }
-    .section{
+
+    .section {
         left: 0;
     }
-    .section.open{
-        left:270px;
+
+    .section.open {
+        left: 270px;
     }
-    .about .about-content .personal-info .info-item p span{
+
+    .about .about-content .personal-info .info-item p span {
         display: block;
         margin-left: 0;
     }
 }
 
-@media(max-width:991px){
-    .portfolio .portfolio-item{
+@media(max-width:991px) {
+    .portfolio .portfolio-item {
         flex: 0 0 50%;
-        max-width: 100%;
+        max-width: 50%;
     }
+
     .service .service-item {
         flex: 0 0 50%;
-        max-width: 100%;
+        max-width: 50%;
     }
+
     .about .about-content .education,
     .about .about-content .experience {
         flex: 0 0 100%;
         max-width: 100%;
     }
-    
-    .home .home-info{
-        flex:0 0 100%; 
+
+    .home .home-info {
+        flex: 0 0 100%;
         max-width: 100%;
-       }
-    .home .home-img{
+    }
+
+    .home .home-img {
         display: none;
     }
 }
 
 @media (max-width: 767px) {
+    .service .service-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
     .about .about-content .education,
     .about .about-content .experience {
         flex: 0 0 100%;
         max-width: 100%;
     }
-   .about .about-content .skills,
-   .about .about-content .personal-info{
+
+    .about .about-content .skills,
+    .about .about-content .personal-info {
         flex: 0 0 100%;
         max-width: 100%;
     }
+
     .contact .contact-info-item .col-6,
     .contact .contact-info-item .col12,
     .contact .contact-info-item,
-    .portfolio .portfolio-item{
-        flex:0 0 100%;
+    .portfolio .portfolio-item {
+        flex: 0 0 100%;
         max-width: 100%;
     }
-    .contact .row .contact-info-item{
+
+    .contact .row .contact-info-item {
         margin-left: 0;
     }
 }
 
 /* For Chrome, Edge, Safari */
 ::-webkit-scrollbar {
-    width: 6px;         /* Thin scrollbar width */
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #ffffff25;  /* Optional: scrollbar track color */
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: var(--skin-color);    /* Scrollbar color */
-    border-radius: 10px;       /* Rounded edges */
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--skin-color);          /* On hover */
-  }
-  
+    width: 6px;
+    /* Thin scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+    background: #ffffff25;
+    /* Optional: scrollbar track color */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--skin-color);
+    /* Scrollbar color */
+    border-radius: 10px;
+    /* Rounded edges */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--skin-color);
+    /* On hover */
+}
